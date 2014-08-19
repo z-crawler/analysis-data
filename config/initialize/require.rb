@@ -4,6 +4,7 @@ require 'yaml'
 require 'json'
 require 'csv'
 require 'nokogiri'
+require 'open-uri'
 
 # require all library
 Dir[File.expand_path(File.dirname(__FILE__)) + '/../*.rb'].each {|file| require file }
