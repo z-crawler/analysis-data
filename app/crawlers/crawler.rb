@@ -13,9 +13,14 @@ class Crawler
     File.open("text.html", 'w+') do |file|
       file.write(data_sample)
     end
+    a = data_sample.text.strip.gsub("\r", "").gsub("\t", " ").squeeze(' ')
+    a = a.split("\n")
+    b = []
+    a.each {|x| b << x.strip.squeeze(" ") if x != " " && !x.empty? }
+    b = b.join("\n")
+
     File.open("text.txt", 'w+') do |file|
-      p data_sample.text.strip
-      file.write(data_sample.text.strip)
+      file.write(b)
     end
   end
 end
